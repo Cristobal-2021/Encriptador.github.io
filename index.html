@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+  <img class="logo" src="img/Vector.svg" alt="" >
+  <section id="main-section">
+    <div id="input-section">
+      <textarea id="input" placeholder="Ingrese el texto aqui" rows="10 " cols="50"></textarea>
+      <div id="actions">
+        <div>
+          <p>
+            <span id="icon"><i class="bi bi-exclamation-circle-fill"></i></span>
+            No se aceptan letras Mayusculas y con acento.
+          </p>
+          <div id="action-buttons">
+            <button id="encrypt" class="action-button">Encriptar</button>
+            <button id="decrypt" class="action-button">Desencriptar</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div id="message">
+        <img src="img/Muñeco.png" alt="">
+        <br>
+        <h1>Ningún mensaje fue encontrado</h1>
+        <p id="show-message">Ingresa el texto que desees encriptar o desencriptar.</p>
+
+
+      </div>
+      <div style="margin-left: 8.3rem;"> <button id="copy" class="action-button">Copiar</button>
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+  <div id="warningModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <h2>¡Advertencia!</h2>
+      </div>
+      <div class="modal-body">
+        <p id="modal-message">Some text in the Modal Body</p>
+      </div>
+      <div class="modal-footer">
+        <button id="close-modal-button">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="bi bi-check-circle-fill"></i>
+        <h2>¡Advertencia!</h2>
+      </div>
+      <div class="modal-body">
+        <p id="success-modal-message">Some text in the Modal Body</p>
+      </div>
+      <div class="modal-footer">
+        <button id="close-button">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="Script.js"></script>
+
+
+
+</html>
