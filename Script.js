@@ -9,7 +9,7 @@ const successModal = document.getElementById("successModal");
 const closeSuccessModal = document.getElementById("close-modal");
 const successModalMessage = document.getElementById("success-modal-message");
 const copy = document.getElementById("copy");
-const area = document.getElementById("texta");
+const area = document.getElementById("texto-encriptado");
 
 
 function encryptMessage(str) {
@@ -97,6 +97,12 @@ encrypt.addEventListener("click", function () {
 
 
 decrypt.addEventListener("click", function () {
+  if (input.value.length <= 0) {
+    warningModalMessage.innerHTML =
+      "No ha ingresado ningún mensaje para que se desencriptar";
+    warningModal.style.display = "block";
+    return;
+  }
   let string = input.value;
   const regex = {
     ai: "a",
@@ -105,6 +111,7 @@ decrypt.addEventListener("click", function () {
     ober: "o",
     ufat: "u",
   };
+
 
   string = string.replace(/ai|enter|imes|ober|ufat/gi, function (matched) {
     return regex[matched];
