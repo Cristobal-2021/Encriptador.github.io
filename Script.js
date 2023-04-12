@@ -9,13 +9,14 @@ const successModal = document.getElementById("successModal");
 const closeSuccessModal = document.getElementById("close-modal");
 const successModalMessage = document.getElementById("success-modal-message");
 const copy = document.getElementById("copy");
+const area = document.getElementById("texta");
 
 
 function encryptMessage(str) {
   const string = str.split("");
   const code = ["ai", "enter", "imes", "ober", "ufat"];
   const encryptMessage = [];
-  
+
 
 
   for (let i = 0; i < string.length; i++) {
@@ -34,12 +35,12 @@ function encryptMessage(str) {
     }
   }
   return encryptMessage.join("");
-  
+
 }
 
 
 function decryptMessage(str) {
-  const regex = /ai|enter|imes|ober|ufat/;
+  const regex = /ai|enter|imes|ober|ufat/gi;
 }
 
 
@@ -76,8 +77,20 @@ encrypt.addEventListener("click", function () {
     warningModal.style.display = "block";
     return;
   } else {
-    showMessage.style.display = "block"; 
-    showMessage.innerHTML = `<h2>${encryptMessage(input.value)}</h2>`;
+    showMessage.style.display = "block";
+    showMessage.innerHTML = `<textarea readonly="true" id="texto-encriptado" style="width: 245px;
+    height: 432px;
+    margin-top: 1px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #0a3871;
+    font-size: 20px;
+    font-style: Regular;
+    line-height: 150%;
+    text-align: left;
+    vertical-align: top;
+    outline: none;
+    position: absolute;">${encryptMessage(input.value)}</textarea>`;
     input.value = "";
   }
 });
@@ -98,14 +111,24 @@ decrypt.addEventListener("click", function () {
   });
 
   showMessage.style.display = "block";
-  showMessage.innerHTML = `<h2>${string}</h2>`;
+  showMessage.innerHTML = `<textarea readonly="true" id="texto-encriptado" style="width: 245px;
+  height: 432px;
+  margin-top: 1px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #0a3871;
+  font-size: 20px;
+  font-style: Regular;
+  line-height: 150%;
+  text-align: left;
+  vertical-align: top;
+  outline: none;">${string}</textarea>`;
   input.value = "";
 });
 
 
 copy.addEventListener("click", function () {
-
-  navigator.clipboard.writeText(showMessage.innerText);
+  navigator.clipboard.writeText(document.getElementById("texto-encriptado").value);
   successModalMessage.innerHTML = "El mensaje se ha copiado de manera exitosa";
   successModal.style.display = "block";
 });
