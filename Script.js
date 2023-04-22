@@ -1,6 +1,6 @@
 const input = document.getElementById("input");
-const encrypt = document.getElementById("encrypt");
-const decrypt = document.getElementById("decrypt");
+const encriptar = document.getElementById("encriptar");
+const desencriptar = document.getElementById("desencriptar");
 const showMessage = document.getElementById("message");
 const closeModalButton = document.getElementById("close-modal-button");
 const warningModal = document.getElementById("warningModal");
@@ -11,52 +11,52 @@ const successModalMessage = document.getElementById("success-modal-message");
 const copy = document.getElementById("copy");
 const area = document.getElementById("texto-encriptado");
 
-
-function encryptMessage(str) {
+/*   declarar la funcion EncriptarCodigo */
+function EncriptarCodigo(str) {
   const string = str.split("");
   const code = ["ai", "enter", "imes", "ober", "ufat"];
-  const encryptMessage = [];
+  const EncriptarCodigo = [];
 
 
 
   for (let i = 0; i < string.length; i++) {
     if (string[i] === "a") {
-      encryptMessage.push(code[0]);
+      EncriptarCodigo.push(code[0]);
     } else if (string[i] === "e") {
-      encryptMessage.push(code[1]);
+      EncriptarCodigo.push(code[1]);
     } else if (string[i] === "i") {
-      encryptMessage.push(code[2]);
+      EncriptarCodigo.push(code[2]);
     } else if (string[i] === "o") {
-      encryptMessage.push(code[3]);
+      EncriptarCodigo.push(code[3]);
     } else if (string[i] === "u") {
-      encryptMessage.push(code[4]);
+      EncriptarCodigo.push(code[4]);
     } else {
-      encryptMessage.push(string[i]);
+      EncriptarCodigo.push(string[i]);
     }
   }
-  return encryptMessage.join("");
+  return EncriptarCodigo.join("");
 
 }
 
+/*   declarar la funcion DesencriptarCodigo */
 
-function decryptMessage(str) {
+function desencriptarMensage(str) {
   const regex = /ai|enter|imes|ober|ufat/gi;
 }
 
+/*   declarar la funcion invalidar el input de ka letras con tilde */
 
-function invalidInput(str) {
+function InvalidarInput(str) {
   const specialChars = /[`áéíóú´!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
   return specialChars.test(str);
 }
 
-
-function invalidInputM(str) {
-  const specialCharsMayus = /[ABCDEFGHIJKLMNÑOPKRSTUVWXYZ]/;
-  return specialCharsMayus.test(str);
-}
+/*   declarar la funcion invalidar el input de las letras Mayusculas */
 
 
-encrypt.addEventListener("click", function () {
+
+
+encriptar.addEventListener("click", function () {
   if (input.value.length <= 0) {
     warningModalMessage.innerHTML =
       "No ha ingresado ningún mensaje para que se encriptado, por favor ingresar el mensaje.";
@@ -64,14 +64,9 @@ encrypt.addEventListener("click", function () {
     return;
   }
 
-  if (invalidInputM(input.value)) {
-    warningModalMessage.innerHTML =
-      "Solo se aceptan  aceptan letras minusculas";
-    warningModal.style.display = "block";
-    return;
-  }
 
-  if (invalidInput(input.value)) {
+
+  if (InvalidarInput(input.value)) {
     warningModalMessage.innerHTML =
       "No se aceptan carácteres especiales, ni tildes. Por favor intente de nuevo.";
     warningModal.style.display = "block";
@@ -90,13 +85,15 @@ encrypt.addEventListener("click", function () {
     text-align: left;
     vertical-align: top;
     outline: none;
-    position: absolute;">${encryptMessage(input.value)}</textarea>`;
+    position: absolute;">${EncriptarCodigo(input.value)}</textarea>`;
     input.value = "";
   }
 });
 
 
-decrypt.addEventListener("click", function () {
+desencriptar.addEventListener("click", function () {
+
+
   if (input.value.length <= 0) {
     warningModalMessage.innerHTML =
       "No ha ingresado ningún mensaje para que se desencriptar";
@@ -136,8 +133,12 @@ decrypt.addEventListener("click", function () {
 
 copy.addEventListener("click", function () {
   navigator.clipboard.writeText(document.getElementById("texto-encriptado").value);
+
+
   successModalMessage.innerHTML = "El mensaje se ha copiado de manera exitosa";
   successModal.style.display = "block";
+
+
 });
 
 

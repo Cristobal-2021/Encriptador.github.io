@@ -27,9 +27,7 @@ body {
 
 #header img {
   width: 15px;
-  /*added*/
   height: 24px;
-  /*added*/
   margin-left: 2rem;
 }
 
@@ -39,7 +37,6 @@ body {
   flex-direction: column;
   padding-top: 0px;
   padding-bottom: 0px;
-  /*added*/
 }
 
 #input-section {
@@ -87,13 +84,11 @@ body {
 
 .action-button {
   margin-top: 0.5rem;
-  /*added*/
   border: 1px solid transparent;
   background: transparent;
   outline: none;
   cursor: pointer;
   padding: 24px;
-  /* width: 200px; */
   width: 100%;
   height: 62px;
   border-radius: 24px;
@@ -108,48 +103,17 @@ body {
   margin-right: 300px;
   margin-left: 200px;
   margin-bottom: 15px;
-  /* text-align: center; */
-}
-
-#encrypt {
-  color: #fff;
-  background: var(--dark-blue);
-}
-
-#encrypt:hover {
-  color: var(--dark-blue);
-  border: 1px solid var(--dark-blue);
-  background: #fff;
-}
-
-#decrypt {
-  color: #fff;
-  background: var(--dark-blue);
-  border: 1px solid var(--dark-blue);
-
-}
-
-#decrypt:hover {
-  background: #fff;
-  border: 1px solid var(--dark-blue);
-  color: var(--dark-blue);
 }
 
 
 
-#copy {
-  color: #0A3871;
-  background: #fff;
-  margin-top: 20px;
-  border-color: #0A3871;
-}
 
-#copy:hover {
-  color: #fff;
-  background: var(--gray-400);
-  margin-top: 20px;
-  border-color: #fff;
-}
+
+
+
+
+
+
 
 
 #message {
@@ -171,25 +135,16 @@ body {
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
 }
 
 .modal-content {
@@ -213,7 +168,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* color: white; */
 }
 
 .modal-header i {
@@ -325,12 +279,18 @@ body {
   #action-buttons {
     display: flex;
     flex-direction: row;
-    /* text-align: center; */
   }
 
   .action-button {
     width: 200px;
+
   }
+
+  .action-button:hover {
+    cursor: pointer;
+
+  }
+
 }
 
 .logo {
@@ -339,7 +299,7 @@ body {
   bottom: 569px;
   left: 100px;
   top: 20px;
-  
+
 }
 
 .action-p {
@@ -628,7 +588,61 @@ body {
   }
 }
 
+.redes {
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 80%;
+}
+
+.redes_texto {
+  color: #fff;
+  font-size: 75%;
+}
+
+/* 6 */
+#encriptar {
+  background: rgb(247, 150, 192);
+  background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
 
 
 
+#encriptar:hover {
+  background: radial-gradient(circle, rgb(104, 62, 81) 0%, rgb(69, 96, 129) 100%);
+  color: white;
+  box-shadow: none;
+}
 
+#desencriptar {
+  background: rgb(247, 150, 192);
+  background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+
+
+#desencriptar:hover {
+  background: radial-gradient(circle, rgb(104, 62, 81) 0%, rgb(69, 96, 129) 100%);
+  color: white;
+  box-shadow: none;
+}
+
+
+#copy {
+  background: rgb(247, 150, 192);
+  background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+  margin-top: 20px;
+  border-color: #0A3871;
+}
+
+#copy:hover {
+  background: radial-gradient(circle, rgb(104, 62, 81) 0%, rgb(69, 96, 129) 100%);
+  color: white;
+  margin-top: 20px;
+  border-color: #fff;
+}
